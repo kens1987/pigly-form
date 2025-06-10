@@ -17,10 +17,10 @@ class CreateWeightLogsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->date('date');
-            $table->decimal('weight,4,1');
+            $table->decimal('weight',4,1);
             $table->integer('calories');
             $table->integer('exercise_time');
-            $table->text('exercise_content')->nullable;
+            $table->text('exercise_content')->nullable();
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });

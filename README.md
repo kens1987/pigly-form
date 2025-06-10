@@ -12,9 +12,9 @@
     DB_PASSWORD= → laravel_pass  
 ・php artisan key:generate  
 ・php artisan migrate  
-・  
+・php artisan db:seed  
 ###  使用技術  
 ###  ER図  
 ###  URL  
-・ピグリーフォーム：  
+・ピグリーフォーム：http://localhost/register/step1  
 ・php MyAdmin：  http://localhost:8080/  
