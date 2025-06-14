@@ -14,6 +14,7 @@
 ・php artisan migrate  
 ・php artisan db:seed  
 ###  使用技術  
+![スクリーンショット (548)](https://github.com/user-attachments/assets/f46f63f9-44bb-4adf-9744-01f7ba3a9fe7)
 ###  ER図  
 ###  URL  
 ・ピグリーフォーム：http://localhost/register/step1  
