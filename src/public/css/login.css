@@ -36,7 +36,7 @@ input[type="email"],
 input[type="password"] {
     width: 100%;
     padding: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     border-radius: 6px;
     border: 1px solid #ccc;
     font-size: 16px;
@@ -57,4 +57,9 @@ input[type="password"] {
     font-size: 14px;
     color: #7e7ef1;
     text-decoration: none;
+}
+.error {
+    color: red;
+    text-align: left;
+    font-size: 14px;
 }
