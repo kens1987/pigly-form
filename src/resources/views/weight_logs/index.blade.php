@@ -106,7 +106,7 @@
                         @endphp
                         {{ $hours }}時間{{ $minutes }}分
                     </td>
-                    <td><a href="{{ route('data.edit', $record->id) }}" class="edit-icon">✏️</a></td>
+                    <td><a href="{{ route('data.edit', ['weightLogId' => $record->id]) }}" class="edit-icon">✏️</a></td>
                 </tr>
                 @endforeach
             </tbody>

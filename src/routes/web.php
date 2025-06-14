@@ -24,4 +24,5 @@ Route::middleware(['auth'])->group(function (){
     Route::get('/weight_logs/goal_setting',[WeightController::class,'goalSettingForm'])->name('goal.setting');
     Route::post('/weight_logs/goal_setting',[WeightController::class,'goalSettingUpdate'])->name('goal.setting.update');
     Route::get('/weight_logs/{weightLogId}/edit',[PiglyController::class,'edit'])->name('data.edit');
+    Route::put('/weight_logs/{weightLogId}/update',[PiglyController::class,'update'])->name('data.update');
 });

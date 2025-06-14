@@ -104,6 +104,11 @@ body {
     text-align: left;
     font-size: 14px;
 }
+
+
+
+
+
 .modal {
     position: fixed;
     z-index: 9999;
@@ -116,7 +121,7 @@ body {
     background: #fff;
     margin: 10% auto;
     padding: 20px;
-    width: 70%;
+    width: 30%;
     position: relative;
 }
 

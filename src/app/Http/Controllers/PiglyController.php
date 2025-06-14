@@ -16,6 +16,7 @@ class PiglyController extends Controller
     public function register(){
         return view('auth.register');
     }
+
     public function register2(PiglyRequest $request){
         $validated = $request->validated();
         $user = User::create([
@@ -26,12 +27,15 @@ class PiglyController extends Controller
         session(['registered_user_id' => $user->id]);
         return redirect()->route('register.step2');
     }
+
     public function registerStep2(){
         return view('auth.register2');
     }
+
     public function login() {
         return view('auth.login');
     }
+
     public function store(PiglyRequest $request){
         $credentials = $request->only('email','password');
         if(Auth::attempt($credentials)) {
@@ -42,6 +46,7 @@ class PiglyController extends Controller
             'email' => ['メールアドレスまたはパスワードが正しくありません。'],
         ]);
     }
+
     public function index(){
         $userId = auth()->id();
         $latestWeightLog = WeightLog::where('user_id',$userId)->orderBy('date','desc')->first();
@@ -53,9 +58,11 @@ class PiglyController extends Controller
         $records = WeightLog::where('user_id',$userId)->orderBy('date','desc')->paginate(8);
         return view('admin',compact('latestWeightLog','weightTarget','diff','records'));
     }
+
     public function create() {
         return view('weight_logs.create');
     }
+
     public function registerStep2Post(PiglyRequest $request) {
         $validated = $request->validated();
         $userId = session('registered_user_id');
@@ -77,6 +84,11 @@ class PiglyController extends Controller
         Auth::login($user);
         $request->session()->regenerate();
         $request->session()->forget('registered_user_id');
-        return redirect()->route('admin');
+        return redirect()->route('weight_logs.index')->with('success','アカウントが作成されました！');
+    }
+
+    public function edit($weightLogId){
+        $weightLog = WeightLog::findOrFail($weightLogId);
+        return view('weight_logs.edit',compact('weightLog'));
     }
 }
